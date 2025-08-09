@@ -8,7 +8,7 @@ public class Main {
         int opcion;
         do {
             mostrarMenu();
-            opcion = leerEntero("Elige una opción: ");
+            opcion = leerEntero("Elige una opcion: ");
             switch (opcion) {
                 case 1 -> opcionAgregar();
                 case 2 -> gestor.listarTareas();
@@ -17,7 +17,7 @@ public class Main {
                 case 5 -> opcionListarPorEstado();
                 case 6 -> opcionEliminar();
                 case 7 -> System.out.println("Saliendo... ¡Éxitos con tu proyecto!");
-                default -> System.out.println("Opción inválida. Intenta nuevamente.");
+                default -> System.out.println("Opcion invalida. Intenta nuevamente.");
             }
         } while (opcion != 7);
 
@@ -55,7 +55,7 @@ public class Main {
             return;
         }
         gestor.listarTareas();
-        int idx = leerEntero("Ingresa el número de la tarea a marcar: ");
+        int idx = leerEntero("Ingresa el numero de la tarea a marcar: ");
         boolean ok = gestor.marcarTareaComoCompletada(idx);
         System.out.println(ok ? "Tarea marcada como completada." : "Índice inválido.");
     }
@@ -67,14 +67,14 @@ public class Main {
             return;
         }
         gestor.listarTareas();
-        int idx = leerEntero("Número de tarea a editar: ");
+        int idx = leerEntero("Numero de tarea a editar: ");
         Tarea t = gestor.obtenerTarea(idx);
         if (t == null) {
-            System.out.println("Índice inválido.");
+            System.out.println("Indice invalido.");
             return;
         }
-        System.out.println("Deja el campo vacío para mantener el valor actual.");
-        System.out.println("Valor actual - Descripción: " + t.getDescripcion());
+        System.out.println("Deja el campo vacio para mantener el valor actual.");
+        System.out.println("Valor actual - Descripcion: " + t.getDescripcion());
         System.out.print("Nueva descripción: ");
         String nuevaDesc = sc.nextLine().trim();
         System.out.println("Valor actual - Fecha límite: " + t.getFechaLimite());
@@ -112,7 +112,7 @@ public class Main {
         gestor.listarTareas();
         int idx = leerEntero("Número de tarea a eliminar: ");
         boolean ok = gestor.eliminarTarea(idx);
-        System.out.println(ok ? "Tarea eliminada." : "Índice inválido.");
+        System.out.println(ok ? "Tarea eliminada." : "Indice inválido.");
     }
 
     // Helpers
@@ -136,7 +136,7 @@ public class Main {
                 case "1", "Alta", "alta" -> { return "Alta"; }
                 case "2", "Media", "media" -> { return "Media"; }
                 case "3", "Baja", "baja" -> { return "Baja"; }
-                default -> System.out.println("Opción inválida. Intenta de nuevo.");
+                default -> System.out.println("Opcion invalida. Intenta de nuevo.");
             }
         }
     }
@@ -150,7 +150,7 @@ public class Main {
                 case "2", "Estudio", "estudio" -> { return "Estudio"; }
                 case "3", "Personal", "personal" -> { return "Personal"; }
                 case "4", "Otro", "otro" -> { return "Otro"; }
-                default -> System.out.println("Opción inválida. Intenta de nuevo.");
+                default -> System.out.println("Opcion invalida. Intenta de nuevo.");
             }
         }
     }
@@ -164,7 +164,7 @@ public class Main {
                 case "1", "Alta", "alta" -> { return "Alta"; }
                 case "2", "Media", "media" -> { return "Media"; }
                 case "3", "Baja", "baja" -> { return "Baja"; }
-                default -> System.out.println("Opción inválida. Intenta de nuevo.");
+                default -> System.out.println("Opcion invalida. Intenta de nuevo.");
             }
         }
     }
@@ -179,7 +179,7 @@ public class Main {
                 case "2", "Estudio", "estudio" -> { return "Estudio"; }
                 case "3", "Personal", "personal" -> { return "Personal"; }
                 case "4", "Otro", "otro" -> { return "Otro"; }
-                default -> System.out.println("Opción inválida. Intenta de nuevo.");
+                default -> System.out.println("Opcion invalida. Intenta de nuevo.");
             }
         }
     }
