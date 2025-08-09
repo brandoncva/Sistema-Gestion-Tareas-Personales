@@ -24,7 +24,6 @@ public class GestorTareas {
             listaTareas.get(i).mostrarInfo();
         }
     }
-
     public void listarTareasPorEstado(boolean completadas) {
         boolean encontrado = false;
         for (int i = 0; i < listaTareas.size(); i++) {
@@ -42,7 +41,6 @@ public class GestorTareas {
             System.out.println(completadas ? "No hay tareas completadas." : "No hay tareas pendientes.");
         }
     }
-
     public boolean marcarTareaComoCompletada(int indice) {
         if (indice < 1 || indice > listaTareas.size()) return false;
         Tarea t = listaTareas.get(indice - 1);
@@ -56,19 +54,16 @@ public class GestorTareas {
         t.editarTarea(descripcion, fecha, prioridad, categoria);
         return true;
     }
-
     public boolean eliminarTarea(int indice) {
         if (indice < 1 || indice > listaTareas.size()) return false;
         listaTareas.remove(indice - 1);
         return true;
     }
-
     // Acceso para mostrar datos antes de editar por ejemplo
     public Tarea obtenerTarea(int indice) {
         if (indice < 1 || indice > listaTareas.size()) return null;
         return listaTareas.get(indice - 1);
     }
-
     public int cantidadTareas() {
         return listaTareas.size();
     }

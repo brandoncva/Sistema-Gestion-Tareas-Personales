@@ -16,7 +16,7 @@ public class Main {
                 case 4 -> opcionEditar();
                 case 5 -> opcionListarPorEstado();
                 case 6 -> opcionEliminar();
-                case 7 -> System.out.println("Saliendo... ¡Éxitos con tu proyecto!");
+                case 7 -> System.out.println("Saliendo... Exitos con tu proyecto!");
                 default -> System.out.println("Opcion invalida. Intenta nuevamente.");
             }
         } while (opcion != 7);
@@ -37,9 +37,9 @@ public class Main {
 
     private static void opcionAgregar() {
         System.out.println("\n--- Agregar nueva tarea ---");
-        System.out.print("Descripción: ");
+        System.out.print("Descripcion: ");
         String descripcion = sc.nextLine().trim();
-        System.out.print("Fecha límite (texto): ");
+        System.out.print("Fecha limite (texto): ");
         String fecha = sc.nextLine().trim();
         String prioridad = leerPrioridad();
         String categoria = leerCategoria();
@@ -57,7 +57,7 @@ public class Main {
         gestor.listarTareas();
         int idx = leerEntero("Ingresa el numero de la tarea a marcar: ");
         boolean ok = gestor.marcarTareaComoCompletada(idx);
-        System.out.println(ok ? "Tarea marcada como completada." : "Índice inválido.");
+        System.out.println(ok ? "Tarea marcada como completada." : "Indice invalido.");
     }
 
     private static void opcionEditar() {
@@ -75,16 +75,16 @@ public class Main {
         }
         System.out.println("Deja el campo vacio para mantener el valor actual.");
         System.out.println("Valor actual - Descripcion: " + t.getDescripcion());
-        System.out.print("Nueva descripción: ");
+        System.out.print("Nueva descripcion: ");
         String nuevaDesc = sc.nextLine().trim();
-        System.out.println("Valor actual - Fecha límite: " + t.getFechaLimite());
+        System.out.println("Valor actual - Fecha limite: " + t.getFechaLimite());
         System.out.print("Nueva fecha límite: ");
         String nuevaFecha = sc.nextLine().trim();
 
         System.out.println("Valor actual - Prioridad: " + t.getPrioridad());
         String nuevaPrioridad = leerPrioridadConDefault(t.getPrioridad());
 
-        System.out.println("Valor actual - Categoría: " + t.getCategoria());
+        System.out.println("Valor actual - Categoria: " + t.getCategoria());
         String nuevaCategoria = leerCategoriaConDefault(t.getCategoria());
 
         boolean ok = gestor.editarTarea(idx,
@@ -100,7 +100,7 @@ public class Main {
         int opt = leerEntero("Elige: ");
         if (opt == 1) gestor.listarTareasPorEstado(false);
         else if (opt == 2) gestor.listarTareasPorEstado(true);
-        else System.out.println("Opción inválida.");
+        else System.out.println("Opcion invalida.");
     }
 
     private static void opcionEliminar() {
@@ -112,7 +112,7 @@ public class Main {
         gestor.listarTareas();
         int idx = leerEntero("Número de tarea a eliminar: ");
         boolean ok = gestor.eliminarTarea(idx);
-        System.out.println(ok ? "Tarea eliminada." : "Indice inválido.");
+        System.out.println(ok ? "Tarea eliminada." : "Indice invalido.");
     }
 
     // Helpers
